@@ -1,0 +1,51 @@
+<!-- archivo soporte.component.html -->
+<div class="content-header">
+  <div class="container-fluid">
+      <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Soporte</h1>
+          </div>
+      </div>
+  </div>
+</div>
+<section class="content">
+  <div class="container-fluid">
+      <section class="content">
+          <div class="card">
+            <div class="card-body row">
+              <div class="col-5 text-center d-flex align-items-center justify-content-center">
+                <div class="">
+                  <h2>SofwareJaess Delicias Del Horno</h2>
+                  <p class="lead mb-5">Tiene algun problema? Comunicate con nosotros<br>
+                    Correo: <a href="#">jhamsoto669&#64;gmail.com</a><br>
+                    Telefono: +57 315 7725794
+                  </p>
+                </div>
+              </div>
+              <div class="col-7">
+                <div class="form-group">
+                  <label for="inputName">Nombre</label>
+                  <input type="text" id="inputName" class="form-control" [(ngModel)]="nombre"/>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail">E-Mail</label>
+                  <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email"/>
+                </div>
+                <div class="form-group">
+                  <label for="inputSubject">Asunto</label>
+                  <input type="text" id="inputSubject" class="form-control" [(ngModel)]="subject"/>
+                </div>
+                <div class="form-group">
+                  <label for="inputMessage">Mensaje</label>
+                  <textarea id="inputMessage" class="form-control" rows="4" [(ngModel)]="mensaje"></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="button" class="btn btn-primary" value="Enviar Mensaje" (click)="enviarMensaje()">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+  </div>
+</section>
+<!-- /.content -->

@@ -1,0 +1,113 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Usuarios</h1>
+            </div><!--col-->
+            <!--<div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home/</a></li>
+                </ol>
+            </div>--><!--col-->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+        <div class="container-fluid">
+          <!--CONTENIDO-->
+          <hr>
+          <input type="button" value="Crear usuario" class="btn-warning" (click)="mostrar_form('ver')">
+          <hr>
+          <!--FORMULARIO-->
+          <div id="formulario" *ngIf="mform == true">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" placeholder="Nombre" 
+                        [(ngModel)]="obj_usuarios.nombre"> 
+                        <span style="color: red;" *ngIf="Validar_nombre == false" >Insertar nombre del usuario</span>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="number" class="form-control" placeholder="Celular" 
+                        [(ngModel)]="obj_usuarios.celular">
+                        <span style="color: red;" *ngIf="Validar_celular == false">Insertar celular del usuario</span>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" placeholder="Email" 
+                        [(ngModel)]="obj_usuarios.email">
+                        <span style="color: red;" *ngIf="Validar_email == false">Insertar email del usuario</span>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" placeholder="Clave" 
+                        [(ngModel)]="obj_usuarios.clave">
+                        <span style="color: red;" *ngIf="Validar_clave == false">Insertar clave del usuario</span>
+                    </div>
+                    <div class="col-lg-4">
+                        <select class="form-control form-select" [(ngModel)]="obj_usuarios.tipo_usuario" name="tipo_usuario">
+                            <option value="" disabled selected>Seleccione el tipo de usuario</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Vendedor">Vendedor</option>
+                            <!-- Más opciones aquí si es necesario -->
+                          </select>
+                        <span style="color: red;" *ngIf="Validar_tipo_usuario === false">Seleccionar tipo de usuario</span>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="button" value="Guardar" class="btn btn-primary" style="width: 100%;" (click)="validar('guardar')" *ngIf="botones_form == false">
+                        <input type="button" value="Editar" class="btn btn-primary" style="width: 100%;" (click)="validar('editar')" *ngIf="botones_form == true">
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="button" value="Cancelar" class="btn btn-secondary" style="width: 100%;" (click)="mostrar_form('no ver')">
+                    </div>
+                </div>
+          </div>
+          <!--Tabla-->
+          <hr>
+          <div style="background-color: rgb(94, 53, 53);" id="tabla">
+            <div class="row">
+                <!--<div class="col-lg-1"></div>-->
+                <div class="col-lg-12">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Celular</th>
+                                <th>Email</th>
+                                <th>Clave</th>
+                                <th>Tipo de usuario</th>
+                                <th>Acciones</th>
+                            </tr>
+                            <tr *ngFor="let item of usuarios">
+                                <td>{{item.nombre}}</td> 
+                                <td>{{item.celular}}</td>
+                                <td>{{item.email}}</td>
+                                <td>
+                                    <span class="clave-asteriscos" *ngIf="!item.mostrarClave">{{'*********'}}</span>
+                                    <span *ngIf="item.mostrarClave">{{item.clave}}</span>
+                                    <span class="ver-clave-btn" (click)="toggleMostrarClave(item)">
+                                        <i class="far" [ngClass]="{'fa-eye': !item.mostrarClave, 'fa-eye-slash': item.mostrarClave}"></i>
+                                    </span>
+                                </td>
+                                <td>{{item.tipo_usuario}}</td>
+                                <td>
+                                    <span class="fas fa-edit" style="color: rgb(26, 8, 130); cursor: pointer;" title="Editar" (click)="cargar_datos(item, item.id_usuario)"></span> 
+                                     / 
+                                    <span class="fas fa-backspace" style="color: rgb(255, 0, 0); cursor: pointer;" title="Eliminar" (click)="eliminar(item.id_usuario)"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!--<div class="col-lg-1"></div>-->
+            </div>
+          </div>
+        </div>
+</section>
+<!-- /.content -->

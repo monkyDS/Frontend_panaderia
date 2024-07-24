@@ -1,0 +1,132 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Compras</h1>
+            </div><!--col-->
+            <!--<div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home/</a></li>
+                </ol>
+            </div>--><!--col-->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+        <div class="container-fluid">
+          <!--CONTENIDO-->
+      <hr>
+      <input type="button" value="Crear Inventario" class="btn-warning" (click)="mostrar_form('ver')">
+      <hr>
+      <!--FORMULARIO-->
+      <div id="formulario" *ngIf="mform == true">
+        <div class="row">
+            <div class="col-lg-4">
+                <input type="date" class="form-control" id="date" name="date" [(ngModel)]="obj_compras.fecha">
+                <span style="color: red;" *ngIf="Validar_fecha == false" >Insertar fecha de la venta</span>
+            </div>
+            <div class="col-lg-4">
+                <select class="form-control form-select" [(ngModel)]="obj_compras.fo_usuario">
+                    <option value="0" label="seleccione usuario" selected="selected">Seleccione el usuario</option>
+                    <option *ngFor="let itemusu of usuarios" value="{{itemusu.id_usuario}}">{{itemusu.nombre}}</option>
+                </select>
+                <span style="color: red;" *ngIf="Validar_fo_usuario === false">Seleccionar el usuario</span>
+            </div>
+            <div class="col-lg-4">
+                <select class="form-control form-select" [(ngModel)]="obj_compras.fo_productos">
+                    <option value="0" label="seleccione producto" selected="selected">Seleccione el producto</option>
+                    <option *ngFor="let itemp of productos" value="{{itemp.id_productos}}">{{itemp.nombre}}</option>
+                </select>
+                <span style="color: red;" *ngIf="Validar_fo_productos === false">Seleccionar el producto</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-4">
+                <select class="form-control form-select" [(ngModel)]="obj_compras.fo_proveedor">
+                    <option value="0" label="seleccione proveedor" selected="selected">Seleccione el proveedor</option>
+                    <option *ngFor="let itempro of proveedor" value="{{itempro.id_proveedor}}">{{itempro.razon_social}}</option>
+                </select>
+                <span style="color: red;" *ngIf="Validar_fo_proveedor === false">Seleccionar un proveedor</span>
+            </div>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" placeholder="Cantidad Producto" 
+                [(ngModel)]="obj_compras.cantidad">
+                <span style="color: red;" *ngIf="Validar_cantidad == false">Insertar la cantidad del producto</span>
+            </div>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" placeholder="Iva" 
+                [(ngModel)]="obj_compras.iva">
+                <span style="color: red;" *ngIf="Validar_iva == false">Insertar el iva del producto</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-4">
+                <input type="text" class="form-control" placeholder="Subtotal" 
+                [(ngModel)]="obj_compras.subtotales">
+                <span style="color: red;" *ngIf="Validar_total == false">Insertar el subtotal del producto</span>
+            </div>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" placeholder="Total" 
+                [(ngModel)]="obj_compras.total">
+                <span style="color: red;" *ngIf="Validar_total == false">Insertar el total del producto</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-4">
+                <input type="button" value="Guardar" class="btn btn-primary" style="width: 100%;" (click)="validar('guardar')" *ngIf="botones_form == false">
+                <input type="button" value="Editar" class="btn btn-primary" style="width: 100%;" (click)="validar('editar')" *ngIf="botones_form == true">
+            </div>
+            <div class="col-lg-4">
+                <input type="button" value="Cancelar" class="btn btn-secondary" style="width: 100%;" (click)="mostrar_form('no ver')">
+            </div>
+        </div>
+    </div>
+      <!--Tabla-->
+      <hr>
+      <div style="background-color: rgb(94, 53, 53);" id="tabla">
+        <div class="row">
+            <!--<div class="col-lg-1"></div>-->
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Usuario</th>
+                            <th>Productos</th>
+                            <th>Proveedor</th>
+                            <th>Cantidad</th>
+                            <th>Iva</th>
+                            <th>Subtotal</th>
+                            <th>Total</th>
+                            <th>Acciones</th>
+                        </tr>
+                        <tr *ngFor="let item of compras">
+                            <td>{{item.fecha}}</td>
+                            <td>{{item.usuarios}}</td>
+                            <td>{{item.productos}}</td>
+                            <td>{{item.proveedor}}</td>
+                            <td>{{item.cantidad}}</td>
+                            <td>{{item.iva}}</td>
+                            <td>{{item.subtotales}}</td>
+                            <td>{{item.total | currency}}</td>
+                          <td>
+                            <span class="fas fa-edit" style="color: rgb(26, 8, 130); cursor: pointer;" title="Editar" (click)="cargar_datos(item, item.id_compras)"></span> 
+                            / 
+                            <span class="fas fa-backspace" style="color: rgb(255, 0, 0); cursor: pointer;" title="Eliminar" (click)="eliminar(item.id_compras)"></span>
+                          </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--<div class="col-lg-1"></div>-->
+        </div>
+      </div>
+    </div>
+</section>
+<!-- /.content -->

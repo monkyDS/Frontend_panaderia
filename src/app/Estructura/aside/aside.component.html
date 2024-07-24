@@ -1,0 +1,98 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <div class="brand-link">
+      <img src="../../../assets/dist/img/logo pan.jpg" alt="AdminLTE Logo" class="brand-image" style="opacity: .8">
+      <span class="brand-text font-weight">Delicias Del Horno</span>
+    </div>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-1 pb-2 mb-1 d-flex justify-content-center align-items-center">
+        <div class="text-center">
+          <h5 class="d-block custom-font">Tu rol es: {{tipo_usuario}}</h5>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-1">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li id="icon" class="nav-icon">
+            <a [routerLink]="['/dashboard']" class="nav-link">
+              <i class="nav-icon"><img src="../../../assets/dist/img/iconos/house-fill.svg"></i>
+              <p id="usu">
+                DASHBOARD
+              </p>
+            </a>
+          </li>
+          <li id="icon" class="nav-icon" *ngIf="tipo_usuario!='Vendedor'">
+            <a [routerLink]="['/usuarios']" class="nav-link">
+              <i class="nav-icon"><img src="../../../assets/dist/img/iconos/person-fill.svg"></i>
+              <p id="usu">
+                USUARIOS
+              </p>
+            </a>
+          </li>
+          <li id="icon" class="nav-icon" *ngIf="tipo_usuario!='Vendedor'">
+            <a [routerLink]="['/administracion']" class="nav-link">
+              <i class="nav-icon"><img src="../../../assets/dist/img/iconos/bank.svg"></i>
+              <p id="usu">
+                PRODUCTOS
+              </p>
+            </a>
+          </li>
+          <li id="icon" class="nav-icon">
+            <a [routerLink]="['/ventas']" class="nav-link">
+              <i class="nav-icon"><img src="../../../assets/dist/img/iconos/cash-coin.svg"></i>
+              <p id="usu">
+                VENTAS
+              </p>
+            </a>
+          </li>
+          <li id="icon" class="nav-icon">
+            <a [routerLink]="['/inventario']" class="nav-link">
+              <i class="nav-icon"><img src="../../../assets/dist/img/iconos/box-seam.svg"></i>
+              <p id="usu">
+                INVENTARIO
+              </p>
+            </a>
+          </li>
+          <!--<li id="icon" class="nav-icon">
+            <a [routerLink]="['/contabilidad']" class="nav-link">
+              <i class="nav-icon"><img src="../../../assets/dist/img/iconos/graph-up-arrow.svg"></i>
+              <p id="usu">
+                CONTABILIDAD
+              </p>
+            </a>
+          </li>-->
+          <li id="icon" class="nav-icon" *ngIf="tipo_usuario!='Vendedor'">
+            <a [routerLink]="['/compras']" class="nav-link">
+              <i class="nav-icon"><img src="../../../assets/dist/img/iconos/cart4.svg"></i>
+              <p id="usu">
+                COMPRAS 
+              </p>
+            </a>
+          </li>
+          <li id="icon" class="nav-icon">
+            <a [routerLink]="['/soporte']" class="nav-link">
+              <i class="nav-icon"><img src="../../../assets/dist/img/iconos/headset.svg"></i>
+              <p id="usu">
+                SOPORTE 
+              </p>
+            </a>
+          </li>
+          <li id="icon" class="nav-icon">
+            <a [routerLink]="['/ajustes']" class="nav-link">
+              <i class="nav-icon"><img src="../../../assets/dist/img/iconos/gear.svg"></i>
+              <p id="usu">
+                AJUSTES  
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
