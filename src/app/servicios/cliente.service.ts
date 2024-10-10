@@ -29,4 +29,8 @@ export class ClienteService {
   filtro(dato:any){
     return this.http.get(`${this.url}?control=filtro&dato=${dato}`);
   }
+
+  ccliente(dato:any){
+    return this.http.get(`${this.url}?control=ccliente&dato=${dato}`);
+  }
 }

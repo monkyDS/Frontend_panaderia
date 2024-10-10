@@ -53,25 +53,25 @@ export class ComprasComponent {
   consulta(){
     this.scompras.consultar().subscribe((resultado:any) => {
       this.compras = resultado;
-    })
+    });
   }
 
   consulta_p(){
     this.sproductos.consultar().subscribe((resultado:any) => {
       this.productos = resultado;
-    })
+    });
   }
 
   consulta_pro(){
     this.sproveedor.consultar().subscribe((resultado:any) => {
       this.proveedor = resultado;
-    })
+    });
   }
 
   consulta_usu(){
     this.susuarios.consultar().subscribe((resultado:any) => {
       this.usuarios = resultado;
-    })
+    });
   }
 
   mostrar_form(dato: any){

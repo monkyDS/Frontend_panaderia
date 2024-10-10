@@ -20,6 +20,7 @@ import { InventarioComponent } from './Modulos/inventario/inventario.component';
 import { SoporteComponent } from './Modulos/soporte/soporte.component';
 import { LoginComponent } from './Modulos/login/login.component';
 import { NoEncontroComponent } from './Modulos/no-encontro/no-encontro.component';
+import { VentasInsertarComponent } from './Modulos/ventas-insertar/ventas-insertar.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { NoEncontroComponent } from './Modulos/no-encontro/no-encontro.component
     InventarioComponent,
     SoporteComponent,
     LoginComponent,
-    NoEncontroComponent
+    NoEncontroComponent,
+    VentasInsertarComponent
   ],
   imports: [
     BrowserModule,

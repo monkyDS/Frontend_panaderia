@@ -10,12 +10,14 @@ export class NavComponent {
 
   nombre: any;
   tipo_usuario: any;
+  email: any;
 
   constructor(private router:Router){}
 
   ngOnInit(): void{
     this.nombre = sessionStorage.getItem("nombre");
     this.tipo_usuario = sessionStorage.getItem("tipo_usuario");
+    this.email = sessionStorage.getItem("email");
   }
 
   cerrar(){

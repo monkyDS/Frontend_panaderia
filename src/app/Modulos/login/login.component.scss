@@ -1,0 +1,16 @@
+/*LOGIN CSS*/
+
+.login-box {
+    background: rgba(117, 71, 3, 0.9); 
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+}
+
+.hold-transition.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}

@@ -1,0 +1,49 @@
+/*SIDEBAR*/
+
+.brand-text {
+    font-family: 'Gabriela', serif;
+    font-weight: bold;
+    color: #47cf1a;
+  }
+
+.sidebar {
+    background-color: #5A3E1B; 
+}
+  
+.sidebar .nav-link {
+    color: #FFFFFF;
+    background-color: #C08000;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+  
+.sidebar .nav-link:hover {
+    background-color: #FFA500;
+    color: #FFFFFF;
+}
+  
+.sidebar .nav-link:active {
+    background-color: #B5651D;
+    color: #FFFFFF;
+}
+  
+.sidebar .nav-link i img {
+    filter: invert(100%);
+    margin-right: 10px;
+}
+
+.user-panel .text-center {
+    padding: 7px;
+    text-align: center;
+    background-color: #473523;
+    border-radius: 10px; 
+  }
+
+  /* ASIDE */
+.custom-font {
+  font-family: 'Georgia', serif; 
+  font-style: italic;
+  color: #ffff97;
+}

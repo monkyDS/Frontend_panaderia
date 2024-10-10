@@ -1,0 +1,66 @@
+
+/* Estilo para la superposición de la factura */
+.overlay-factura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.factura-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.factura-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.factura-buttons button {
+  padding: 10px 20px;
+}
+
+@media print {
+  .factura-container {
+    margin-top: 120px;
+    align-content: center;
+  }
+}
+
+//modal
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+#verproductos {
+  background-color: white;
+  position: fixed;
+  padding: 3%;
+  width: 50%;
+  top: 15%;
+  left: 35%;
+  z-index: 1;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+  

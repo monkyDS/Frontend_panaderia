@@ -1,4 +1,4 @@
-<!-- archivo soporte.component.html -->
+<!--SOPORTE-->
 <div class="content-header">
   <div class="container-fluid">
       <div class="row mb-2">
@@ -8,6 +8,7 @@
       </div>
   </div>
 </div>
+
 <section class="content">
   <div class="container-fluid">
       <section class="content">
@@ -16,9 +17,9 @@
               <div class="col-5 text-center d-flex align-items-center justify-content-center">
                 <div class="">
                   <h2>SofwareJaess Delicias Del Horno</h2>
-                  <p class="lead mb-5">Tiene algun problema? Comunicate con nosotros<br>
+                  <p class="lead mb-5">¿Tiene algún problema? Comunicate con nosotros<br>
                     Correo: <a href="#">jhamsoto669&#64;gmail.com</a><br>
-                    Telefono: +57 315 7725794
+                    Teléfono: +57 315 7725794
                   </p>
                 </div>
               </div>
@@ -48,4 +49,28 @@
         </section>
   </div>
 </section>
+
+<!-- Chat Soporte -->
+<div style="color: black;" class="chat-container" *ngIf="isChatOpen">
+  <div class="chat-header">
+      <span>Soporte Técnico</span>
+      <button class="close-btn" (click)="toggleChat()">✖</button>
+  </div>
+  <div class="chat-body">
+      <div class="messages">
+          <div *ngFor="let message of chatMessages" [ngClass]="{'sent': message.type === 'sent', 'received': message.type === 'received'}">
+              <span [innerHTML]="message.content"></span>
+          </div>
+      </div>
+      <div class="input-container">
+          <textarea [(ngModel)]="newChatMessage" placeholder="Escribe tu mensaje..."></textarea>
+          <button (click)="sendChatMessage()">Enviar</button>
+      </div>
+  </div>
+</div>
+
+<button class="float-btn" (click)="toggleChat()">
+  <span class="chat-icon">💬</span>
+  <b>Soporte</b>
+</button>
 <!-- /.content -->

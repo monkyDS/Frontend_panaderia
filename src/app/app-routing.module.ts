@@ -14,6 +14,7 @@ import { AjustesComponent } from './Modulos/ajustes/ajustes.component';
 import { LoginComponent } from './Modulos/login/login.component';
 import { NoEncontroComponent } from './Modulos/no-encontro/no-encontro.component';
 import { validaruserGuard } from './guard/validaruser.guard';
+import { VentasInsertarComponent } from './Modulos/ventas-insertar/ventas-insertar.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
       {path: 'usuarios', component: UsuariosComponent, canActivate: [validaruserGuard]},
       {path: 'administracion', component: AdministracionComponent, canActivate: [validaruserGuard]},
       {path: 'ventas', component: VentasComponent, canActivate: [validaruserGuard]},
+      {path: 'ventasins', component: VentasInsertarComponent, canActivate: [validaruserGuard]},
       {path: 'inventario', component: InventarioComponent, canActivate: [validaruserGuard]},
       {path: 'compras', component: ComprasComponent, canActivate: [validaruserGuard]},
       {path: 'soporte', component: SoporteComponent, canActivate: [validaruserGuard]},

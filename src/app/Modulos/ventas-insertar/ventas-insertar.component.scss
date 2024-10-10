@@ -1,0 +1,35 @@
+.contenedor-ventas {
+    padding: 20px;
+    background: url('/assets/fondo.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+  }
+  
+  h2, h3 {
+    color: #ffb84d;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid white;
+  }
+  
+  button {
+    background-color: #ffb84d;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e69a00;
+  }
+  

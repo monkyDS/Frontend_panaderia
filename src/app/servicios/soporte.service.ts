@@ -4,35 +4,29 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class VentasService {
+export class SoporteService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'http://localhost/panaderia2/backend/controlador/ventas.php';
+  url = 'http://localhost/panaderia2/backend/controlador/soporte.php';
 
-  consultar() {
+  consultar(){
     return this.http.get(`${this.url}?control=consulta`);
   }
 
-  consultarp(id:number) {
-    return this.http.get(`${this.url}?control=productos&id=${id}`);
-  }
-
-  insertar(params: any) {
-    console.log(params);
+  insertar(params:any){
     return this.http.post(`${this.url}?control=insertar`, JSON.stringify(params));
   }
 
-  editar(id: number, params: any) {
-
+  editar(id:number, params:any){
     return this.http.post(`${this.url}?control=editar&id=${id}`, JSON.stringify(params));
-  }
+}
 
-  eliminar(id: number) {
+  eliminar(id:number){
     return this.http.get(`${this.url}?control=eliminar&id=${id}`);
   }
 
-  filtro(dato: any) {
+  filtro(dato:any){
     return this.http.get(`${this.url}?control=filtro&dato=${dato}`);
   }
 }

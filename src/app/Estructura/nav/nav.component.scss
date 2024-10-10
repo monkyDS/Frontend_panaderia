@@ -1,0 +1,80 @@
+
+/*NAVBAR*/
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  #nav-item {
+    margin-right: 10px;
+  }
+
+  .welcome-text {
+    display: inline-block;
+    font-weight: bold;
+    animation: wave 2s infinite;
+  }
+  
+  @keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  /*cerrar sesion*/
+
+//ol > li > span{
+//  cursor: pointer;
+//  border-radius: 15px;
+//  border: 1px solid rgb(255, 0, 0);
+//  background-color: #51ff00;
+//  padding: 6px;
+//}
+//
+//ol > li > span:hover {
+//  background-color: #354597;
+//  border:  1px solid #4400ff;
+//}
+//
+//ol > li > span:active{
+//  background-color: #bcc0d3;
+//  border:  1px solid #00ff1a;
+//}
+
+
+
+//ol > li > span{
+//  background-color: #1e2235;
+//  border-radius: 5px;
+//  content: '';
+//  display: block;
+//  height: 100%;
+//  left: 0;
+//  position: absolute;
+//  top: 0;
+//  transform: none;
+//  transition: transform 50ms ease;
+//  width: 100%;
+//  z-index: 2;
+//}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end; 
+}
+
+#menu {
+  left: 70px; /* Ajusta el valor para mover a la izquierda */
+}

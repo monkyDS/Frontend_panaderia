@@ -19,4 +19,12 @@ export class AsideComponent {
     console.log(this.tipo_usuario);
   }
 
+  cerrar(){
+    sessionStorage.setItem("id", "");
+    sessionStorage.setItem("nombre", "");
+    sessionStorage.setItem("email", "");
+    sessionStorage.setItem("tipo_usuario", "");
+    this.router.navigate(['login'])
+  }
+
 }
